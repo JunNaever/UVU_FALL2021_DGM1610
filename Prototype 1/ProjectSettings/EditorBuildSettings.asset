@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Tank Sim.unity
+    guid: 6e0050d8a3385a54aa3016e6c8e1388a
   m_configObjects: {}

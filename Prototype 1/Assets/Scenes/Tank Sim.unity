@@ -324,6 +324,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3827239463019688435, guid: 18b215d7e7f93654da6162026a6f13d1, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3827239463019688437, guid: 18b215d7e7f93654da6162026a6f13d1, type: 3}
       propertyPath: m_Name
       value: Box_Crate (1)
@@ -531,6 +535,7 @@ GameObject:
   - component: {fileID: 1636136017}
   - component: {fileID: 1636136016}
   - component: {fileID: 1636136015}
+  - component: {fileID: 1636136018}
   m_Layer: 0
   m_Name: Tank Camera
   m_TagString: MainCamera
@@ -596,13 +601,26 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636136014}
-  m_LocalRotation: {x: 0.087857395, y: -0, z: -0, w: 0.9961331}
-  m_LocalPosition: {x: -768, y: 6567, z: -46328}
-  m_LocalScale: {x: 760.97705, y: 760.97705, z: 760.97705}
+  m_LocalRotation: {x: 0.08785242, y: -0.010600481, z: 0.00093494606, w: 0.9960767}
+  m_LocalPosition: {x: 541.3707, y: 32.275494, z: 206.87793}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 215073486194319030}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 10.081, y: 0, z: 0}
+--- !u!114 &1636136018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636136014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2fb87c06522f8244a454b247867505a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tank: {fileID: 433719079764410766}
 --- !u!33 &84701986203196113
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -631,7 +649,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4012722076840325140}
-  - {fileID: 1636136017}
   m_Father: {fileID: 959039775012723508}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -679,7 +696,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &433719079764410768
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -691,8 +708,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 31333.145, y: 17814.182, z: 30960.576}
-  m_Center: {x: -335.2817, y: 8475.561, z: -148.66606}
+  m_Size: {x: 31333.145, y: 17814.182, z: 29915.55}
+  m_Center: {x: -335.2817, y: 8475.561, z: -671.2311}
 --- !u!114 &433719079764410769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,8 +722,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c78a53554459e3e448f8c93a22615ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  turnSpeed: 0
+  speed: 30
+  turnSpeed: 60
+  hInput: 0
+  vInput: 0
 --- !u!4 &507347899426994176
 Transform:
   m_ObjectHideFlags: 0
