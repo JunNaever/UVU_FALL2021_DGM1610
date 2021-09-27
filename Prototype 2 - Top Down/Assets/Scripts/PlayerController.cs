@@ -9,11 +9,13 @@ public class PlayerController : MonoBehaviour
     public float vInput;
     public float xRange = 9.67f;
     public float yRange = 4.95f;
+    public GameObject projectile;
+    public Vector3 offset = new Vector3(0, 1, 0);
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -25,7 +27,7 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.right * speed * hInput * Time.deltaTime);
         transform.Translate(Vector3.up * speed * vInput * Time.deltaTime);
 
-        if(transform.position.x < -xRange)
+        if (transform.position.x < -xRange)
         {
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
         }
@@ -42,5 +44,9 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, yRange, transform.position.z);
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(projectile, transform.position + offset, projectile.transform.rotation);
+        }
     }
 }
