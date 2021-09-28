@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class DestroyOutOfBounds : MonoBehaviour
 {
-    public float xBound = 5.0f;
-    public float yBound = 5.0f;
+    float xBound = 12.3f;
+    float yBound = 5.8f;
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y > yBound)
-        {
+        if(transform.position.y > yBound || transform.position.y < -yBound || transform.position.x > xBound || transform.position.x < -xBound)
             Destroy(gameObject);
-        }
     }
 }
