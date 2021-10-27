@@ -48,8 +48,12 @@ public class PlayerController : MonoBehaviour
     float z = Input.GetAxis("Vertical") * moveSpeed;
 
     //rb.velocity = new Vector3(x, rb.velocity.y, z); - old code
+    //Move direction relative to the camera.
     Vector3 dir = transform.right * x + transform.forward * z;
+    //Add direction and force to jump direction
+    dir.y = rb.velocity.y;
     rb.velocity = dir;
+
   }
 
   void CamLook() //Allows moving of camera with the mouse inputs and sets bounds.
@@ -66,6 +70,10 @@ public class PlayerController : MonoBehaviour
   {
     Ray ray = new Ray(transform.position, Vector3.down); //Raycast downwards
     if (Physics.Raycast(ray, 1.1f))
+    {
+      //Add force to jump
+
       rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    }
   }
 }

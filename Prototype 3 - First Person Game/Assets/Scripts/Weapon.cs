@@ -22,6 +22,7 @@ public class Weapon : MonoBehaviour
       isPlayer = true;
   }
 
+
   //custom functions
   public bool CanShoot()  //returns true if the player can shoot based on the shootRate and Ammo value.
   {
