@@ -66,4 +66,17 @@ public class Enemy : MonoBehaviour
       path.RemoveAt(0);
   }
 
+  //Applies damage to the enemy
+  public void TakeDamage(int damage)
+  {
+    curHp -= damage;
+    if (curHp <= 0)
+      Death();
+  }
+
+  void Death()
+  {
+    Destroy(gameObject);
+  }
+
 }

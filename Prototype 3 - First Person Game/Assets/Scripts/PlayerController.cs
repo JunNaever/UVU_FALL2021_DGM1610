@@ -5,8 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
   //
-  public float moveSpeed;           //movement speed of the player  in units per second.
-  public float jumpForce;           //force applied to the player when they jump.
+  [Header("Stats")]
+  public float moveSpeed, jumpForce;
+  public int curHp, maxHp;
+  [Header("Mouse Look")]
   public float lookSensitivity;     //Mouse look sensitivity
   public float maxLookX, minLookX;  //The bounds for the camera.
   private float rotX;               //Current rotation of the camera.
@@ -40,6 +42,7 @@ public class PlayerController : MonoBehaviour
       if (weapon.CanShoot())
         weapon.Shoot();
   }
+
 
   //Custom Functions
   void Move()   //Calculates the movement of the player.
@@ -75,5 +78,19 @@ public class PlayerController : MonoBehaviour
 
       rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
+  }
+
+  //Applies damage to the player
+  public void TakeDamage(int damage)
+  {
+    curHp -= damage;
+    if (curHp <= 0)
+      Death();
+  }
+
+  //Player Death
+  void Death()
+  {
+    Destroy(gameObject);
   }
 }

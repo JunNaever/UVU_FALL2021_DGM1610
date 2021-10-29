@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 546087691}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -353,14 +353,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691486483}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.70529205, y: -0.050627537, z: -0.050627522, w: 0.70529205}
   m_LocalPosition: {x: 0.53, y: 0.26, z: 0.4}
   m_LocalScale: {x: 0.23886181, y: 0.23886181, z: 0.23886181}
   m_Children:
   - {fileID: 1611378327}
   m_Father: {fileID: 1427160847}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -8.212}
 --- !u!136 &691486485
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -628,7 +628,7 @@ GameObject:
   - component: {fileID: 753028349}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
@@ -822,7 +822,7 @@ GameObject:
   - component: {fileID: 830899653}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -935,6 +935,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   jumpForce: 10
+  curHp: 10
+  maxHp: 10
   lookSensitivity: 10
   maxLookX: 90
   minLookX: -90
@@ -954,7 +956,7 @@ MonoBehaviour:
   muzzle: {fileID: 1477284348}
   curAmmo: 30
   maxAmmo: 60
-  infiniteAmmo: 0
+  infiniteAmmo: 1
   bulletSpeed: 50
   shootRate: 0.3
 --- !u!114 &830899653
@@ -1069,7 +1071,7 @@ GameObject:
   - component: {fileID: 1011393876}
   m_Layer: 0
   m_Name: Wall (3)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
@@ -1164,7 +1166,7 @@ GameObject:
   - component: {fileID: 1368927974}
   m_Layer: 0
   m_Name: Wall (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
@@ -1263,7 +1265,7 @@ GameObject:
   - component: {fileID: 1427160841}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1298,7 +1300,7 @@ MonoBehaviour:
   muzzle: {fileID: 1611378327}
   curAmmo: 30
   maxAmmo: 60
-  infiniteAmmo: 0
+  infiniteAmmo: 1
   bulletSpeed: 10
   shootRate: 0.5
 --- !u!114 &1427160843
@@ -1558,7 +1560,7 @@ GameObject:
   - component: {fileID: 2025233959}
   m_Layer: 0
   m_Name: Wall (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
